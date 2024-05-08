@@ -104,6 +104,7 @@ if [ ! $? = 0 ]; then
 fi
 
 echo "[*] BoM file succesfully generated"
+cat bom.xml
 
 # Cyclonedx CLI conversion
 echo "[*] Cyclonedx CLI conversion"
