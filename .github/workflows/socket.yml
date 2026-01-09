@@ -27,7 +27,11 @@ jobs:
           python-version: '3.12'
       
       - name: Install Socket CLI
-        run: pip install socketsecurity --upgrade
+        run: |
+          pip install socketsecurity --upgrade
+          pip install npm --upgrade
+          pip install uv --upgrade
+          pip install npx --upgrade
       
       - name: Run Socket Security Scan
         env:
