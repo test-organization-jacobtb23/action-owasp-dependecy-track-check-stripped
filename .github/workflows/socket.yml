@@ -42,4 +42,14 @@ jobs:
           GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           socketcli --version
-          socketcli --target-path $GITHUB_WORKSPACE --reach --scm github --repo $GITHUB_REPOSITORY
+      
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+      
+          socketcli \
+            --target-path "$GITHUB_WORKSPACE" \
+            --scm github \
+            --workspace "$GITHUB_REPOSITORY_OWNER" \
+            --repo "$REPO_NAME" \
+            --reach \
+            --reach-memory-limit 16384 \
+            --reach-timeout 4800
