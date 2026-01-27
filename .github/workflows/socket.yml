@@ -42,4 +42,4 @@ jobs:
           GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           socketcli --version
-          socketcli --target-path $GITHUB_WORKSPACE --reach --scm github
+          socketcli --target-path $GITHUB_WORKSPACE --reach --scm github --repo $GITHUB_REPOSITORY
